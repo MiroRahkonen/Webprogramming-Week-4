@@ -15,20 +15,11 @@ async function search(event) {
   let length = json.length;
   for (let i = 0; i < length; i++) {
     let imgsrc = "";
-    if (json[i].show.image != null) {
-      /*checking if there is an image src*/
-
+    if (json[i].show.image != null){/*checking if there is an image src*/
       imgsrc = Object.values(json[i].show.image)[0];
     }
     let title = json[i].show.name;
     let summary = json[i].show.summary;
-    list.innerHTML +=
-      '<div class="show-data"><img src="' +
-      imgsrc +
-      '"> <div class="show-info"><h1>' +
-      title +
-      "</h1>" +
-      summary +
-      "</div></div>";
+    list.innerHTML += '<div class="show-data"><img src="'+imgsrc+'"><div class="show-info"><h1>'+title+"</h1>"+summary+"</div></div>";
   }
 }
